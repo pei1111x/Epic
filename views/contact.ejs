@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Epic Online</title>
+    <style>
+        body {
+            background-color: #ffc1e396;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .custom-btn {
+            background-color: #e9b0ffce; /* Custom color */
+            color: #fff; /* Text color */
+            border-color: #e9b0ffce; /* Border color */
+    }
+
+        .custom-btn:hover {
+            background-color: #e9b0ff; /* Darker color on hover */
+            border-color: #e9b0ff; /* Darker border color on hover */
+    }
+    </style>
+        
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="text-center">
+        <br>
+        <h1>Contact Us</h1>
+        <br>
+        <p style=font-size:20px>Get In Touch And Let Us Know How We Can Help</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <% for(let i = 0; i < contacts.length; i++) { %>
+                    <div class="card text-center">
+                        <tr>
+                            <td><h4><%= contacts[i].contactName %></h4></td>
+                            <td><%= contacts[i].description %></td>
+                        </tr>
+                    </div>
+            <% } %>
+
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <a href="/" class="btn custom-btn">Live Chat</a>
+                </div>
+                <div class="col-auto">
+                    <a href="/con-info" class="btn custom-btn">Contact</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Epic Online</title>
+
+    <style>
+        body {
+            background-color: #ffc1e396;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;    
+        }
+
+        .custom-btn {
+            background-color: #e9b0ffce;
+            color: #fff;
+            border-color: #e9b0ffce;
+        }
+
+        .custom-btn:hover {
+            background-color: #e9b0ff;
+            border-color: #e9b0ff; 
+        }
+    </style>
+
+</head>
+<body>
+    <%- include('partials/header') %>
+    <br>
+        <h1 class="text-center">Key In Your Reviews</h1>
+        <form action="/reviews" method="post">
+            <div class="form-group">
+                <label for="orderid">Order Id:</label>
+                <input type="text" class="form-control" id="orderId" name="orderId">
+            </div>
+
+            <div class="form-group">
+                <label for="productname">Product Name:</label>
+                <input type="text" class="form-control" id="productName" name="productName">
+            </div>
+
+            <div class="form-group">
+                <label for="rate">Rate:</label>
+                <input type="number" class="form-control" id="rate" name="rate" min="0" max="5" step="1">
+            </div>
+
+            <div class="form-group">
+                <label for="review">Review:</label>
+                <textarea class="form-control" id="review" name="review" rows="4"></textarea>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <button type="submit" class="custom-btn">Submit Review</button>
+                </div>
+                <div class="col-auto">
+                    <a href="/" class="btn custom-btn">Back</a>
+                </div>
+            </div>
+        </form>
+</body>
+</html>
